@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camila Labarca | 15 Años</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+background:#f4f4f4;
+}
+
+/* INICIO */
+#startScreen{
+position:fixed;
+width:100%;
+height:100%;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+cursor:pointer;
+font-family:'Playfair Display';
+color:#7a6a58;
+font-size:24px;
+}
+
+/* SECCIONES */
+.section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+position:relative;
+text-align:center;
+}
+
+.section::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background-image:url('imagen-de-fondo.jpg');
+background-position:center center;
+background-repeat:no-repeat;
+background-size:cover;
+z-index:1;
+}
+
+@media(min-width:900px){
+.section::before{
+background-size:contain;
+background-color:#f4f4f4;
+}
+}
+
+.section::after{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(255,255,255,0.4);
+z-index:2;
+}
+
+.overlay{
+position:relative;
+z-index:3;
+background:rgba(255,255,255,0.85);
+padding:30px;
+border-radius:20px;
+max-width:500px;
+width:100%;
+}
+
+/* TITULOS */
+.title{
+font-family:'Playfair Display';
+font-size:26px;
+color:#7a6a58;
+}
+
+/* 💖 NOMBRE */
+.name-container{
+display:flex;
+justify-content:center;
+align-items:center;
+height:110px;
+}
+
+.name{
+font-family:'Great Vibes', cursive;
+font-size:50px;
+color:#a88c6a;
+white-space: nowrap;
+overflow: hidden;
+width: 0;
+animation: typing 6s steps(28,end) forwards;
+}
+
+@keyframes typing{
+from{width:0;}
+to{width:100%;}
+}
+
+/* INFO */
+.info{
+font-size:16px;
+color:#666;
+line-height:1.7;
+}
+
+/* GALERÍA */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:10px;
+margin-top:15px;
+}
+
+.gallery img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:12px;
+}
+
+/* BOTONES */
+button{
+margin-top:15px;
+padding:12px;
+width:100%;
+border:none;
+background:#c8a24a;
+color:white;
+border-radius:25px;
+cursor:pointer;
+}
+
+/* MAPA */
+.map{
+width:100%;
+height:250px;
+border:0;
+border-radius:12px;
+margin-top:15px;
+}
+
+/* 🎵 BOTÓN MÚSICA AJUSTADO */
+.music-float{
+position:fixed;
+top:20px;
+right:20px;
+width:44px;
+height:44px;
+border-radius:50%;
+border:none;
+
+/* 🔥 MISMO FONDO DEL DISEÑO */
+background:rgba(255,255,255,0.6);
+
+display:flex;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+z-index:10000;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.12);
+transition:0.3s;
+}
+
+/* 🎶 NOTA MUSICAL DORADO CLARO */
+.music-float{
+color:#e6c36a;
+font-size:18px;
+}
+
+.music-float:hover{
+transform:scale(1.1);
+background:rgba(255,255,255,0.8);
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+.name{font-size:38px;}
+.title{font-size:22px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- INICIO -->
+<div id="startScreen">Abrir Invitación</div>
+
+<!-- BOTÓN MÚSICA -->
+<button id="musicBtn" class="music-float">🎵</button>
+
+<!-- PORTADA -->
+<div class="section"><div class="overlay">
+<div class="title">Mis 15 Años</div>
+
+<div class="name-container">
+<div class="name">Camila Labarca</div>
+</div>
+
+</div></div>
+
+<!-- MENSAJE -->
+<div class="section"><div class="overlay">
+<div class="info">
+Con la bendición de Dios y mis padres<br><br>
+Tengo el honor de invitarte a celebrar este momento especial
+</div>
+</div></div>
+
+<!-- GALERÍA -->
+<div class="section"><div class="overlay">
+<div class="gallery">
+<img src="foto1.jpg"><img src="foto2.jpg"><img src="foto3.jpg"><img src="foto4.jpg">
+<img src="foto5.jpg"><img src="foto6.jpg"><img src="foto7.jpg"><img src="foto8.jpg">
+</div>
+</div></div>
+
+<!-- MENSAJE -->
+<div class="section"><div class="overlay">
+<div class="info">
+Hoy dejo atrás mi niñez para comenzar<br><br>
+una nueva historia llena de sueños
+</div>
+</div></div>
+
+<!-- GALERÍA 2 -->
+<div class="section"><div class="overlay">
+<div class="gallery">
+<img src="foto9.jpg"><img src="foto10.jpg">
+</div>
+</div></div>
+
+<!-- UBICACIÓN -->
+<div class="section"><div class="overlay">
+<div class="title">Ubicación</div>
+
+<iframe class="map"
+src="https://maps.google.com/maps?q=El+Amanecer+Salon+De+Fiestas+Lewisville+TX&output=embed">
+</iframe>
+
+<a href="https://www.google.com/maps/place/El+Amanecer+Salon+De+Fiestas/@33.0376617,-96.9923777" target="_blank">
+<button>Ver en Google Maps</button>
+</a>
+
+</div></div>
+
+<!-- DESCARGA -->
+<div class="section"><div class="overlay">
+<a href="invitacion.jpg" download>
+<button>Descargar Invitación</button>
+</a>
+</div></div>
+
+<!-- AUDIO -->
+<audio id="music" loop>
+<source src="musica.mp3">
+</audio>
+
+<script>
+const start = document.getElementById("startScreen");
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
+
+let playing = true;
+
+start.onclick = ()=>{
+music.volume = 0;
+music.play();
+
+let v=0;
+let fade=setInterval(()=>{
+if(v<0.95){
+v+=0.05;
+music.volume=v;
+}else clearInterval(fade);
+},200);
+
+start.style.display="none";
+};
+
+musicBtn.onclick = ()=>{
+if(playing){
+music.pause();
+musicBtn.innerText = "🎵";
+}else{
+music.play();
+musicBtn.innerText = "🎵";
+}
+playing = !playing;
+};
+</script>
+
+</body>
+</html>
